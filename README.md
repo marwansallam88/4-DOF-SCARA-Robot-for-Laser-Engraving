@@ -59,7 +59,7 @@ SCARA-Robot-Laser-Engraving/
   - Contour shapes (e.g., squares, logos).
   - Text engraving (e.g., "GUC 20 YEARS").
   - Infill patterns (e.g., bat shape).  
-  ![Example Output](Videos/Engraved.jpeg)
+  ![Example Output](Videos/Text.jpeg)
 
 ## Future Work
 - Integrate computer vision for real-time adjustments.
