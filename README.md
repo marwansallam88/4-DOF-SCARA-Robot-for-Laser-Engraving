@@ -1,5 +1,5 @@
 # 4-DOF SCARA Robot for Laser Engraving
-
+![Project Diagram](Videos/SCARA.jpeg)
 ## Overview
 This repository contains the design, control, and simulation files for a 4-DOF SCARA robot used for laser engraving. The project includes:
 - **Mathematical modeling** (kinematics and dynamics) using MATLAB/Simulink.
@@ -17,7 +17,7 @@ This repository contains the design, control, and simulation files for a 4-DOF S
 ## Repository Structure
 SCARA-Robot-Laser-Engraving/  
 ├── SCARA MODEL/ # 3D models and assembly files  
-├── MATLAB_Simulations/ # Forward/inverse kinematics and dynamics  
+├── Mathmetical Model/ # Forward/inverse kinematics and dynamics  
 ├── Control/Marlin-2.0.x/ # Marlin configuration and motor test codes  
 ├── Videos/ # Images and data from engraving tests  
 └── Thesis/ # Thesis PDF and supplementary notes  
@@ -37,13 +37,14 @@ SCARA-Robot-Laser-Engraving/
 
 ## Setup Instructions
 1. **Assembly**:
-   - 3D-print parts from `SolidWorks_Designs/`.
+   - 3D-print parts from `SCARA MODEL`.
    - Assemble belts, pulleys, and motors as per the thesis (Chapter 5).
 2. **Electronics**:
    - Connect steppers, limit switches, and laser to Arduino Mega/RAMPS 1.6.
    - Adjust stepper driver currents using `V_ref = I_mot * 8 * R_sense`.
+     ![Project Diagram](Videos/Circuitry.png)
 3. **Firmware**:
-   - Upload Marlin firmware (`Arduino_Firmware/`) with SCARA-specific settings:
+   - Upload Marlin firmware (`Control/Marlin-2.0.x`) with SCARA-specific settings:
      - Arm lengths: 228mm (Link 1), 136.5mm (Link 2).
      - Steps/unit: 90 (Joint 1), 29.206 (Joint 2), 400 (Z-axis).
 4. **Calibration**:
@@ -54,12 +55,16 @@ SCARA-Robot-Laser-Engraving/
    - Execute via Repetier-Host.
 
 ## Results
-- **Simulations**: Validated forward/inverse kinematics and dynamics (see `MATLAB_Simulations/`).
+- **Simulations**: Validated forward/inverse kinematics and dynamics (see `Mathmetical Model/`).
+  ![Project Diagram](Videos/Simulink.png)
 - **Engraving Tests**:
   - Contour shapes (e.g., squares, logos).
   - Text engraving (e.g., "GUC 20 YEARS").
-  - Infill patterns (e.g., bat shape).  
-  ![Example Output](Videos/Text.jpeg)
+  - Infill patterns (e.g., bat shape).
+  <p align="center">
+  <img src="Videos/Preview_Text.png" alt="Description" width="400"/>
+  <img src="Videos/Text.jpeg" alt="Description" width="400"/>
+</p>
 
 ## Future Work
 - Integrate computer vision for real-time adjustments.
